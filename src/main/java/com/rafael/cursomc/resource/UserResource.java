@@ -72,6 +72,14 @@ public ResponseEntity <UserDTO> findById( @PathVariable String id){
 	
 }
 
+@RequestMapping( value = "/{id}" ,method = RequestMethod.DELETE)	
+public ResponseEntity <UserDTO> delete( @PathVariable String id){
+	userService.delete(id);
+	
+	return ResponseEntity.noContent().build();
+	
+}
+
 @RequestMapping(method = RequestMethod.POST)	
 public ResponseEntity <Void> insert( @RequestBody UserDTO objDTO){
 	
